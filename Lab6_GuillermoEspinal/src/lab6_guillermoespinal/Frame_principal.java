@@ -8,7 +8,12 @@ package lab6_guillermoespinal;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -21,6 +26,8 @@ public class Frame_principal extends javax.swing.JFrame {
      */
     public Frame_principal() {
         initComponents();
+        //acordate de borrar esto
+        yo();
     }
 
     /**
@@ -54,9 +61,24 @@ public class Frame_principal extends javax.swing.JFrame {
         jd_fecha = new com.toedter.calendar.JDateChooser();
         bt_color = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        crearyagregar = new javax.swing.JDialog();
+        cb_mazos = new javax.swing.JComboBox<>();
+        cb_carta = new javax.swing.JComboBox<>();
+        bt_agregarcarta = new javax.swing.JButton();
+        tf_ptvida = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        tf_dano = new javax.swing.JTextField();
+        jDialog2 = new javax.swing.JDialog();
+        jDialog3 = new javax.swing.JDialog();
+        jDialog4 = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtree_mazos1 = new javax.swing.JTree();
+        bt_crearyagregar1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         mn_login = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
 
         jLabel1.setText("LOGIN");
 
@@ -215,9 +237,128 @@ public class Frame_principal extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
+        cb_mazos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mazo1", "Mazo2", "Mazo3" }));
+        cb_mazos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_mazosItemStateChanged(evt);
+            }
+        });
+
+        cb_carta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minipekka ", "Montapuerco", "Golem", "Lenador", "Dragon Infernal ", "Dragon", "Gigante Noble", "Pandilla de Duendes" }));
+
+        bt_agregarcarta.setText("Agregar");
+        bt_agregarcarta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregarcartaMouseClicked(evt);
+            }
+        });
+
+        jLabel11.setText("Puntos de vida:");
+
+        jLabel13.setText("Dano:");
+
+        javax.swing.GroupLayout crearyagregarLayout = new javax.swing.GroupLayout(crearyagregar.getContentPane());
+        crearyagregar.getContentPane().setLayout(crearyagregarLayout);
+        crearyagregarLayout.setHorizontalGroup(
+            crearyagregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearyagregarLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(cb_mazos, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cb_carta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crearyagregarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_agregarcarta)
+                .addGap(237, 237, 237))
+            .addGroup(crearyagregarLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_ptvida, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_dano, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+        );
+        crearyagregarLayout.setVerticalGroup(
+            crearyagregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearyagregarLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(crearyagregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_mazos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_carta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77)
+                .addGroup(crearyagregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(crearyagregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tf_ptvida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_dano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13))
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addComponent(bt_agregarcarta)
+                .addGap(42, 42, 42))
+        );
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
+        jDialog3.getContentPane().setLayout(jDialog3Layout);
+        jDialog3Layout.setHorizontalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog3Layout.setVerticalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
+        jDialog4.getContentPane().setLayout(jDialog4Layout);
+        jDialog4Layout.setHorizontalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog4Layout.setVerticalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu3.setText("Inicio");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Mazos");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mazo1");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mazo2");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mazo3");
+        treeNode1.add(treeNode2);
+        jtree_mazos1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(jtree_mazos1);
+
+        bt_crearyagregar1.setText("crear y agregar carta a mazo");
+        bt_crearyagregar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_crearyagregar1MouseClicked(evt);
+            }
+        });
+        bt_crearyagregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_crearyagregar1ActionPerformed(evt);
+            }
+        });
+
+        jMenu3.setText("Login");
 
         mn_login.setText("Login");
         mn_login.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -234,17 +375,43 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu1.setText("Inicio");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 741, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(296, Short.MAX_VALUE)
+                .addComponent(bt_crearyagregar1)
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(237, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bt_crearyagregar1)
+                        .addGap(45, 45, 45))))
         );
 
         pack();
@@ -285,12 +452,24 @@ public class Frame_principal extends javax.swing.JFrame {
         jd_crearusuario.setVisible(true);
         
     }
+     /*private void abrir_inicio(){
+        jd_inicio.setModal(true);//este es para bloquear los anteriores
+        jd_inicio.pack();//acopla el tamano de la ventana
+        jd_inicio.setLocationRelativeTo(this);
+        jd_inicio.setVisible(true);
+        
+    }*/
+     private void abrir_crear(){
+        crearyagregar.setModal(true);//este es para bloquear los anteriores
+        crearyagregar.pack();//acopla el tamano de la ventana
+        crearyagregar.setLocationRelativeTo(this);
+        crearyagregar.setVisible(true);
+        
+    }
     
     
     private void bt_colorMouseClicked(java.awt.event.MouseEvent evt) {                                      
-        /*  Color c = JColorChooser.showDialog(this,"Selecione color", Color.yellow);
-        bt_color.setForeground(c);
-        bt_color.setBackground(c);*/
+   
         bt_color.setBackground(JColorChooser.showDialog(this,"Seleccione un color",Color.yellow));
     }                                     
 
@@ -308,13 +487,152 @@ public class Frame_principal extends javax.swing.JFrame {
             String contra=tf_crearcontra.getText();
             Color color = bt_color.getBackground();
             Date fecha =jd_fecha.getDate();
+            //sacar la edad de el user 
             long dife = new Date().getTime()-fecha.getTime();
             int anos = (int)((dife/(1000*60*60*24))/365);
-            System.out.println(anos);
-            //fecha.
-            usuarios.add(new Usuario(nombre, usuario, usuario, contra, fecha, anos));
+            //System.out.println(anos);
+            
+            Usuario newuser = new Usuario(nombre, usuario, usuario, contra, fecha, anos);
+            usuarios.add(newuser);
+            user_global=newuser;
             //(new Date()).getTime()-((s.getFecha_nacimiento().getTime())/(1000*60*60*24))
     }                                     
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+      //abrir_inicio();
+    
+      user_mazo1=user_global.getMazo1();
+      user_mazo2=user_global.getMazo2();
+      user_mazo3=user_global.getMazo3();
+     /* DefaultTreeModel modeloArbol = (DefaultTreeModel) this.jtree_mazos.getModel();
+      DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloArbol.getRoot();
+      DefaultMutableTreeNode mazo1 = new DefaultMutableTreeNode(user_mazo1);
+      DefaultMutableTreeNode mazo2 = new DefaultMutableTreeNode(user_mazo2);
+      DefaultMutableTreeNode mazo3 = new DefaultMutableTreeNode(user_mazo3);
+      raiz.add(mazo1);
+      raiz.add(mazo2);
+      raiz.add(mazo3);
+      modeloArbol.reload();*/
+    
+
+      
+      
+    }                                      
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {                                    
+        //abrir_inicio();
+    }                                   
+
+    private void bt_crearyagregar1MouseClicked(java.awt.event.MouseEvent evt) {                                               
+        abrir_crear();
+    }                                              
+
+    private void bt_crearyagregar1ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void cb_mazosItemStateChanged(java.awt.event.ItemEvent evt) {                                          
+        
+    }                                         
+
+    private void bt_agregarcartaMouseClicked(java.awt.event.MouseEvent evt) {                                             
+        try {
+            int dano = Integer.parseInt(tf_dano.getText());
+            int ptvida = Integer.parseInt(tf_ptvida.getText());
+            //int dano = Integer.parseInt(tf_dano.getText());
+            Cartas newcarta= new Cartas();
+            switch (cb_carta.getSelectedIndex()){
+            case 0:
+                newcarta = new Minipekka(dano, ptvida);
+                break;
+            case 1:
+                newcarta = new Montapuerco(dano, ptvida);
+                break;
+            case 2:
+                 newcarta = new Golem(dano, ptvida);
+                break;
+            case 3:
+                newcarta = new Leñador(dano, ptvida);
+                break;
+            case 4:
+                 newcarta = new Dragon_Infernal(dano, ptvida);
+                break;
+            case 5:
+                 newcarta = new Dragon(dano, ptvida);
+                break;
+            case 6:
+                 newcarta = new Gigante_noble(dano, ptvida);
+                break;
+            case 7:
+                 newcarta = new Pandilla_duendes(dano, ptvida);
+                break;
+        }
+            switch (cb_mazos.getSelectedIndex()){
+            case 0:
+                if ((user_global.getMazo1().getCartas().size())>3) {
+                    JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
+                }else {
+                    user_global.getMazo1().setCarta(newcarta);
+                     DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
+                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
+                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
+                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
+                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
+                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
+                     hijo1.add(hijito);
+                     raiz.add(hijo1);
+                     raiz.add(hijo2);
+                     raiz.add(hijo3);
+                     modeloarbol.reload();
+                  /* raiz.add(hijo1);
+                   add(hijo)
+                           
+                           model.setRoot(nuevaRaiz)*/
+                }
+                break;
+            case 1:
+                 if ((user_global.getMazo2().getCartas().size())>3) {
+                    JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
+                }else {
+                    user_global.getMazo2().setCarta(newcarta);
+                     DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
+                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
+                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
+                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
+                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
+                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
+                     hijo2.add(hijito);
+                     raiz.add(hijo1);
+                     raiz.add(hijo2);
+                     raiz.add(hijo3);
+                     modeloarbol.reload();
+                     
+                }
+                  //user_global.getMazo2().setCarta(newcarta);
+                break;
+            case 2:
+                 if ((user_global.getMazo3().getCartas().size())>3) {
+                    JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
+                }else {
+                    user_global.getMazo3().setCarta(newcarta);
+                    DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
+                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
+                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
+                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
+                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
+                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
+                     hijo3.add(hijito);
+                     raiz.add(hijo1);
+                     raiz.add(hijo2);
+                     raiz.add(hijo3);
+                     modeloarbol.reload();
+                }
+                break;
+        }
+            
+        } catch (Exception e) {
+        }
+    }                                            
 
     /**
      * @param args the command line arguments
@@ -350,13 +668,27 @@ public class Frame_principal extends javax.swing.JFrame {
             }
         });
     }
+    public void yo(){
+        user_global=yo;
+        //user_global.setMazo1(user_mazo1);
+    }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JButton bt_agregarcarta;
     private javax.swing.JButton bt_color;
+    private javax.swing.JButton bt_crearyagregar1;
     private javax.swing.JButton bt_login;
+    private javax.swing.JComboBox<String> cb_carta;
+    private javax.swing.JComboBox<String> cb_mazos;
+    private javax.swing.JDialog crearyagregar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JDialog jDialog2;
+    private javax.swing.JDialog jDialog3;
+    private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -365,20 +697,32 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_crearusuario;
     private com.toedter.calendar.JDateChooser jd_fecha;
     private javax.swing.JDialog jd_login;
+    private javax.swing.JTree jtree_mazos1;
     private javax.swing.JMenuItem mn_login;
     private javax.swing.JTextField tf_crearapellido;
     private javax.swing.JTextField tf_crearcontra;
     private javax.swing.JTextField tf_crearnombre;
     private javax.swing.JTextField tf_crearusuario;
+    private javax.swing.JTextField tf_dano;
     private javax.swing.JPasswordField tf_pass;
+    private javax.swing.JTextField tf_ptvida;
     private javax.swing.JTextField tf_usuario;
     // End of variables declaration                   
 ArrayList<Usuario> usuarios = new ArrayList();
 Usuario user_global;
+Mazo user_mazo1;
+Mazo user_mazo2;
+Mazo user_mazo3;
+Usuario yo= new Usuario();
+
+//acordate de borrar esto
+
 
 }

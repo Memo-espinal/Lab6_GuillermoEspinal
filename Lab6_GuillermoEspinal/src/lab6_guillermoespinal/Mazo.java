@@ -39,6 +39,10 @@ public class Mazo {
     public void setCarta(Cartas carta){
         this.cartas.add(carta);
     }
+
+    public ArrayList<Cartas> getCartas() {
+        return cartas;
+    }
    
 
     @Override
