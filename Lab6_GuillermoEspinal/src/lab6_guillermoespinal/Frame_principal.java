@@ -27,6 +27,54 @@ public class Frame_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        jd_login = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        tf_pass = new javax.swing.JPasswordField();
+        tf_usuario = new javax.swing.JTextField();
+
+        jLabel1.setText("LOGIN");
+
+        jLabel2.setText("Usuario: ");
+
+        jLabel3.setText("Contrasena:");
+
+        javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
+        jd_login.getContentPane().setLayout(jd_loginLayout);
+        jd_loginLayout.setHorizontalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_loginLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_loginLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(332, Short.MAX_VALUE))
+        );
+        jd_loginLayout.setVerticalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1)
+                .addGap(35, 35, 35)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(70, 70, 70)
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(tf_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(221, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,5 +127,11 @@ public class Frame_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JDialog jd_login;
+    private javax.swing.JPasswordField tf_pass;
+    private javax.swing.JTextField tf_usuario;
     // End of variables declaration                   
 }
