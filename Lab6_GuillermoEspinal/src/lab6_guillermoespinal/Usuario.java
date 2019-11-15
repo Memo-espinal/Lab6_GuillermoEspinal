@@ -87,7 +87,7 @@ public class Usuario {
     @Override
     public String toString() {
         // ya vamos a ver aqui
-        return "Usuario{" + "usuario=" + usuario + ", contra=" + contra + '}';
+        return nombre;//"Usuario{" + "usuario=" + usuario + ", contra=" + contra + '}';
     }
    
 }

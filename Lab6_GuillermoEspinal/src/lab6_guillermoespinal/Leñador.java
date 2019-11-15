@@ -14,7 +14,7 @@ public class Leñador extends Cartas{
     public Leñador() {
     }
 
-    public Leñador(String nombre, int dano, int puntosvida, String objetivo, String velocidad, String tipo) {
+    public Leñador(/*String nombre,*/ int dano, int puntosvida/*, String objetivo, String velocidad, String tipo*/) {
          super.nombre="Leñador";
         super.dano=dano;
         super.puntosvida=puntosvida;
@@ -22,6 +22,7 @@ public class Leñador extends Cartas{
         super.objetivo="Terrestres";
         super.tipo="Legendaria";
         super.costo=4;
+         super.carta=new Leñador();
         //super(nombre, dano, puntosvida, objetivo, velocidad, tipo);
     }
     //Leñador(Legendaria):Velocidad Alta y Objetivos Terrestres.Cuesta 4 de Elixir. 

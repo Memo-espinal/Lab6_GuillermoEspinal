@@ -14,7 +14,7 @@ public class Pandilla_duendes extends Cartas{
     public Pandilla_duendes() {
     }
 
-    public Pandilla_duendes(String nombre, int dano, int puntosvida, String objetivo, String velocidad, String tipo) {
+    public Pandilla_duendes(/*String nombre,*/ int dano, int puntosvida/*, String objetivo, String velocidad, String tipo*/) {
          super.nombre="Pandilla de Duendes";
         super.dano=dano;
         super.puntosvida=puntosvida;
@@ -22,6 +22,7 @@ public class Pandilla_duendes extends Cartas{
         super.objetivo="Aereos y Terrestres";
         super.tipo="Comun";
         super.costo=3;
+         super.carta=new Pandilla_duendes();
        //super(nombre, dano, puntosvida, objetivo, velocidad, tipo);
     }
     //Pandilla de Duendes(Comun):Velocidad Alta y Objetivos Aereos y Terrestres. Cuesta 3 de Elixir. 

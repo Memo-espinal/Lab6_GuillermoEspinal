@@ -17,6 +17,7 @@ public class Minipekka  extends Cartas{
         super.objetivo="Terrestres";
         super.tipo="Especial";
         super.costo=4;
+         super.carta=new Minipekka();
         
         //super(nombre, dano, puntosvida, objetivo, velocidad, tipo);
     }
