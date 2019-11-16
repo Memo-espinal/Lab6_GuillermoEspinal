@@ -1112,7 +1112,6 @@ public class Frame_principal extends javax.swing.JFrame {
             for (int i = 0; i <clanes.size(); i++) {
                 listamodelo.addElement(clanes.get(i));
             }
-        
         jl_listas.setModel(listamodelo);
         //listamodelo
             
