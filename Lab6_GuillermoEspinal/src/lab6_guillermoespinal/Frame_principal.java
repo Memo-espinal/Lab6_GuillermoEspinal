@@ -26,7 +26,7 @@ public class Frame_principal extends javax.swing.JFrame {
      */
     public Frame_principal() {
         initComponents();
-       // listamodelo = (DefaultListModel)jl_listas.getModel();
+        
         //acordate de borrar esto
         yo();
     }
@@ -526,6 +526,9 @@ public class Frame_principal extends javax.swing.JFrame {
         bt_crearclan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_crearclanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_crearclanMouseEntered(evt);
             }
         });
 
@@ -1085,6 +1088,9 @@ public class Frame_principal extends javax.swing.JFrame {
               Clan clan  = new Clan();
         switch (cb_tipoclan.getSelectedIndex()){
             case 1:
+                clan.setLider(user_global);
+                clan.setNombre(nombre);
+                clan.setTipo("Bronze");
                 clan = new Clan(nombre,user_global, "Bronze");
                 clanes.add(clan);
                 break;
@@ -1101,13 +1107,23 @@ public class Frame_principal extends javax.swing.JFrame {
                 clanes.add(clan);
                 break;
         }
-        listamodelo.addElement(clan);
+        
+        listamodelo = new DefaultListModel();
+            for (int i = 0; i <clanes.size(); i++) {
+                listamodelo.addElement(clanes.get(i));
+            }
+        
+        jl_listas.setModel(listamodelo);
         //listamodelo
             
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,"Hubo un problema vuelva a intentarlo");
         }
             
+    }                                         
+
+    private void bt_crearclanMouseEntered(java.awt.event.MouseEvent evt) {                                          
+        // TODO add your handling code here:
     }                                         
 
     /**
