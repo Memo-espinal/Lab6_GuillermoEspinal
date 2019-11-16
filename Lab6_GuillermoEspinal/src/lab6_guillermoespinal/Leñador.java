@@ -92,7 +92,7 @@ public class Leñador extends Cartas{
 
     @Override
     public String toString() {
-        return "Le\u00f1ador{" + '}';
+        return "Lenador{" +super.nombre+ '}';
     }
     
     

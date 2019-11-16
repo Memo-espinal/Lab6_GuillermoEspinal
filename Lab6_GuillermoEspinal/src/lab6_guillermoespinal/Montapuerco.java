@@ -86,7 +86,7 @@ public class Montapuerco extends Cartas{
 
     @Override
     public String toString() {
-        return "Montapuerco{" + '}';
+        return "Montapuerco{" + super.nombre+'}';
     }
     
     

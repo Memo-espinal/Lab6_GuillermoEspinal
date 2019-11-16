@@ -11,6 +11,10 @@ public class Clan {
     Usuario lider;
     String tipo ;
 
+    public Clan() {
+    }
+    
+
     public Clan(String nombre, Usuario lider, String tipo) {
         this.nombre = nombre;
         this.lider = lider;

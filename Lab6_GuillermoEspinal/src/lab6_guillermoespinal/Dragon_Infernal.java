@@ -93,7 +93,7 @@ public class Dragon_Infernal extends Cartas {
 
     @Override
     public String toString() {
-        return "Dragon_Infernal{" + '}';
+        return "Dragon_Infernal{" + super.nombre+'}';
     }
     
     

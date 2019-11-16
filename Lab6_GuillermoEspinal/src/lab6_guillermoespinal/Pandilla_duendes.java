@@ -93,7 +93,7 @@ public class Pandilla_duendes extends Cartas{
 
     @Override
     public String toString() {
-        return "Pandilla_duendes{" + '}';
+        return "Pandilla_duendes{" + super.nombre+'}';
     }
     
 }

@@ -94,7 +94,7 @@ public class Dragon extends Cartas{
 
     @Override
     public String toString() {
-        return "Dragon{" + '}';
+        return "Dragon{" + super.nombre+'}';
     }
     
     

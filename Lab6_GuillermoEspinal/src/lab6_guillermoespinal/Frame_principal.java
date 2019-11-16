@@ -26,6 +26,7 @@ public class Frame_principal extends javax.swing.JFrame {
      */
     public Frame_principal() {
         initComponents();
+       // listamodelo = (DefaultListModel)jl_listas.getModel();
         //acordate de borrar esto
         yo();
     }
@@ -69,15 +70,44 @@ public class Frame_principal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         tf_dano = new javax.swing.JTextField();
+        jd_stats = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_stats = new javax.swing.JTextArea();
+        jd_vida = new javax.swing.JDialog();
+        bt_editvida = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        tf_modvida = new javax.swing.JTextField();
+        jd_moddano = new javax.swing.JDialog();
+        bt_editdano = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        tf_moddano = new javax.swing.JTextField();
+        popupmenu_cartas = new javax.swing.JPopupMenu();
+        ver_stas = new javax.swing.JMenuItem();
+        opmodificarvida = new javax.swing.JMenuItem();
+        opmodificarnombre = new javax.swing.JMenuItem();
+        opmoddano = new javax.swing.JMenuItem();
+        jd_modnombre = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        tf_modnombre = new javax.swing.JTextField();
+        bt_editnombre = new javax.swing.JButton();
+        jd_crearclan = new javax.swing.JDialog();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        cb_tipoclan = new javax.swing.JComboBox<>();
+        tf_clan = new javax.swing.JTextField();
+        bt_crearclan = new javax.swing.JButton();
         jDialog2 = new javax.swing.JDialog();
         jDialog3 = new javax.swing.JDialog();
-        jDialog4 = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtree_mazos1 = new javax.swing.JTree();
         bt_crearyagregar1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_listas = new javax.swing.JList<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         mn_login = new javax.swing.JMenuItem();
+        mn_logout = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
         jLabel1.setText("LOGIN");
@@ -301,6 +331,242 @@ public class Frame_principal extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
+        ta_stats.setEditable(false);
+        ta_stats.setColumns(20);
+        ta_stats.setRows(5);
+        jScrollPane1.setViewportView(ta_stats);
+
+        javax.swing.GroupLayout jd_statsLayout = new javax.swing.GroupLayout(jd_stats.getContentPane());
+        jd_stats.getContentPane().setLayout(jd_statsLayout);
+        jd_statsLayout.setHorizontalGroup(
+            jd_statsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_statsLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        jd_statsLayout.setVerticalGroup(
+            jd_statsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_statsLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        bt_editvida.setText("editar");
+        bt_editvida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_editvidaMouseClicked(evt);
+            }
+        });
+
+        jLabel12.setText("Nuevos puntos de vida: ");
+
+        javax.swing.GroupLayout jd_vidaLayout = new javax.swing.GroupLayout(jd_vida.getContentPane());
+        jd_vida.getContentPane().setLayout(jd_vidaLayout);
+        jd_vidaLayout.setHorizontalGroup(
+            jd_vidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_vidaLayout.createSequentialGroup()
+                .addGroup(jd_vidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_vidaLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(bt_editvida))
+                    .addGroup(jd_vidaLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_modvida, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(130, Short.MAX_VALUE))
+        );
+        jd_vidaLayout.setVerticalGroup(
+            jd_vidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_vidaLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(jd_vidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tf_modvida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(bt_editvida)
+                .addGap(77, 77, 77))
+        );
+
+        bt_editdano.setText("editar");
+        bt_editdano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_editdanoMouseClicked(evt);
+            }
+        });
+
+        jLabel14.setText("Nuevo dano:  ");
+
+        javax.swing.GroupLayout jd_moddanoLayout = new javax.swing.GroupLayout(jd_moddano.getContentPane());
+        jd_moddano.getContentPane().setLayout(jd_moddanoLayout);
+        jd_moddanoLayout.setHorizontalGroup(
+            jd_moddanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_moddanoLayout.createSequentialGroup()
+                .addGroup(jd_moddanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_moddanoLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(bt_editdano))
+                    .addGroup(jd_moddanoLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_moddano, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        jd_moddanoLayout.setVerticalGroup(
+            jd_moddanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_moddanoLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(jd_moddanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(tf_moddano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(bt_editdano)
+                .addGap(77, 77, 77))
+        );
+
+        ver_stas.setText("ver stats");
+        ver_stas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ver_stasMouseClicked(evt);
+            }
+        });
+        ver_stas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_stasActionPerformed(evt);
+            }
+        });
+        popupmenu_cartas.add(ver_stas);
+
+        opmodificarvida.setText("Modificar puntos de vida");
+        opmodificarvida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                opmodificarvidaMouseClicked(evt);
+            }
+        });
+        opmodificarvida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opmodificarvidaActionPerformed(evt);
+            }
+        });
+        popupmenu_cartas.add(opmodificarvida);
+
+        opmodificarnombre.setText("Modificar nombre de la carta");
+        opmodificarnombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                opmodificarnombreMouseClicked(evt);
+            }
+        });
+        opmodificarnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opmodificarnombreActionPerformed(evt);
+            }
+        });
+        popupmenu_cartas.add(opmodificarnombre);
+
+        opmoddano.setText("Modificar dano de carta");
+        opmoddano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                opmoddanoMouseClicked(evt);
+            }
+        });
+        opmoddano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opmoddanoActionPerformed(evt);
+            }
+        });
+        popupmenu_cartas.add(opmoddano);
+
+        jLabel15.setText("Nuevo nombre:  ");
+
+        bt_editnombre.setText("editar");
+        bt_editnombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_editnombreMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_modnombreLayout = new javax.swing.GroupLayout(jd_modnombre.getContentPane());
+        jd_modnombre.getContentPane().setLayout(jd_modnombreLayout);
+        jd_modnombreLayout.setHorizontalGroup(
+            jd_modnombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modnombreLayout.createSequentialGroup()
+                .addGroup(jd_modnombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modnombreLayout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(bt_editnombre))
+                    .addGroup(jd_modnombreLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_modnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(172, Short.MAX_VALUE))
+        );
+        jd_modnombreLayout.setVerticalGroup(
+            jd_modnombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modnombreLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(jd_modnombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_modnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(bt_editnombre)
+                .addGap(77, 77, 77))
+        );
+
+        jLabel16.setText("Nombre:");
+
+        jLabel17.setText("Tipo: ");
+
+        cb_tipoclan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronze", "Oro", "Plata", "Legendario" }));
+
+        bt_crearclan.setText("crear clan");
+        bt_crearclan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_crearclanMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_crearclanLayout = new javax.swing.GroupLayout(jd_crearclan.getContentPane());
+        jd_crearclan.getContentPane().setLayout(jd_crearclanLayout);
+        jd_crearclanLayout.setHorizontalGroup(
+            jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearclanLayout.createSequentialGroup()
+                .addGroup(jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_crearclanLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_crearclanLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_tipoclan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_crearclanLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_clan, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jd_crearclanLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(bt_crearclan)))
+                .addContainerGap(233, Short.MAX_VALUE))
+        );
+        jd_crearclanLayout.setVerticalGroup(
+            jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_crearclanLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_clan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jd_crearclanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(cb_tipoclan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addComponent(bt_crearclan)
+                .addGap(92, 92, 92))
+        );
+
         javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
         jDialog2.getContentPane().setLayout(jDialog2Layout);
         jDialog2Layout.setHorizontalGroup(
@@ -323,17 +589,6 @@ public class Frame_principal extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
-        jDialog4.getContentPane().setLayout(jDialog4Layout);
-        jDialog4Layout.setHorizontalGroup(
-            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jDialog4Layout.setVerticalGroup(
-            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Mazos");
@@ -344,6 +599,11 @@ public class Frame_principal extends javax.swing.JFrame {
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Mazo3");
         treeNode1.add(treeNode2);
         jtree_mazos1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jtree_mazos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtree_mazos1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtree_mazos1);
 
         bt_crearyagregar1.setText("crear y agregar carta a mazo");
@@ -357,6 +617,15 @@ public class Frame_principal extends javax.swing.JFrame {
                 bt_crearyagregar1ActionPerformed(evt);
             }
         });
+
+        jButton2.setText("Crear clan");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jScrollPane3.setViewportView(jl_listas);
 
         jMenu3.setText("Login");
 
@@ -372,6 +641,14 @@ public class Frame_principal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(mn_login);
+
+        mn_logout.setText("Log out");
+        mn_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mn_logoutActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mn_logout);
 
         jMenuBar1.add(jMenu3);
 
@@ -395,23 +672,37 @@ public class Frame_principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(296, Short.MAX_VALUE)
-                .addComponent(bt_crearyagregar1)
-                .addGap(58, 58, 58)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_crearyagregar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(78, 78, 78)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(237, Short.MAX_VALUE)
+                .addContainerGap(184, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(65, 65, 65)
                         .addComponent(bt_crearyagregar1)
-                        .addGap(45, 45, 45))))
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -452,18 +743,47 @@ public class Frame_principal extends javax.swing.JFrame {
         jd_crearusuario.setVisible(true);
         
     }
-     /*private void abrir_inicio(){
-        jd_inicio.setModal(true);//este es para bloquear los anteriores
-        jd_inicio.pack();//acopla el tamano de la ventana
-        jd_inicio.setLocationRelativeTo(this);
-        jd_inicio.setVisible(true);
-        
-    }*/
+     
      private void abrir_crear(){
         crearyagregar.setModal(true);//este es para bloquear los anteriores
         crearyagregar.pack();//acopla el tamano de la ventana
         crearyagregar.setLocationRelativeTo(this);
         crearyagregar.setVisible(true);
+        
+    }
+     private void abrir_stats(){
+        jd_stats.setModal(true);//este es para bloquear los anteriores
+        jd_stats.pack();//acopla el tamano de la ventana
+        jd_stats.setLocationRelativeTo(this);
+        jd_stats.setVisible(true);
+        
+    }
+     private void abrir_modvida(){
+        jd_vida.setModal(true);//este es para bloquear los anteriores
+        jd_vida.pack();//acopla el tamano de la ventana
+        jd_vida.setLocationRelativeTo(this);
+        jd_vida.setVisible(true);
+        
+    }
+     private void abrir_moddano(){
+        jd_moddano.setModal(true);//este es para bloquear los anteriores
+        jd_moddano.pack();//acopla el tamano de la ventana
+        jd_moddano.setLocationRelativeTo(this);
+        jd_moddano.setVisible(true);
+        
+    }
+     private void abrir_modnombre(){
+        jd_modnombre.setModal(true);//este es para bloquear los anteriores
+        jd_modnombre.pack();//acopla el tamano de la ventana
+        jd_modnombre.setLocationRelativeTo(this);
+        jd_modnombre.setVisible(true);
+     }
+        
+     private void abrir_crearclan(){
+        jd_crearclan.setModal(true);//este es para bloquear los anteriores
+        jd_crearclan.pack();//acopla el tamano de la ventana
+        jd_crearclan.setLocationRelativeTo(this);
+        jd_crearclan.setVisible(true);
         
     }
     
@@ -482,7 +802,8 @@ public class Frame_principal extends javax.swing.JFrame {
     }                                        
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {                                      
-         String nombre=tf_crearnombre.getText();
+        try{ 
+        String nombre=tf_crearnombre.getText();
             String usuario=tf_crearusuario.getText();
             String contra=tf_crearcontra.getText();
             Color color = bt_color.getBackground();
@@ -493,9 +814,13 @@ public class Frame_principal extends javax.swing.JFrame {
             //System.out.println(anos);
             
             Usuario newuser = new Usuario(nombre, usuario, usuario, contra, fecha, anos);
+            newuser.setModelo((DefaultTreeModel)jtree_mazos1.getModel());
             usuarios.add(newuser);
             user_global=newuser;
             //(new Date()).getTime()-((s.getFecha_nacimiento().getTime())/(1000*60*60*24))
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,"no se pudo crear el nuevo usuario vuelva a intentarlo");
+        }
     }                                     
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
@@ -504,15 +829,7 @@ public class Frame_principal extends javax.swing.JFrame {
       user_mazo1=user_global.getMazo1();
       user_mazo2=user_global.getMazo2();
       user_mazo3=user_global.getMazo3();
-     /* DefaultTreeModel modeloArbol = (DefaultTreeModel) this.jtree_mazos.getModel();
-      DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloArbol.getRoot();
-      DefaultMutableTreeNode mazo1 = new DefaultMutableTreeNode(user_mazo1);
-      DefaultMutableTreeNode mazo2 = new DefaultMutableTreeNode(user_mazo2);
-      DefaultMutableTreeNode mazo3 = new DefaultMutableTreeNode(user_mazo3);
-      raiz.add(mazo1);
-      raiz.add(mazo2);
-      raiz.add(mazo3);
-      modeloArbol.reload();*/
+    
     
 
       
@@ -567,72 +884,231 @@ public class Frame_principal extends javax.swing.JFrame {
                  newcarta = new Pandilla_duendes(dano, ptvida);
                 break;
         }
+            DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
+            DefaultMutableTreeNode especialidad = new DefaultMutableTreeNode(newcarta.getTipo());
+            DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
+            DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
+            DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
+            DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
+            DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
+            
             switch (cb_mazos.getSelectedIndex()){
             case 0:
-                if ((user_global.getMazo1().getCartas().size())>3) {
+                if ((user_global.getMazo1().getCartas().size())>2) {
                     JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
                 }else {
                     user_global.getMazo1().setCarta(newcarta);
-                     DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
-                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
-                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
-                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
-                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
-                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
-                     hijo1.add(hijito);
-                     raiz.add(hijo1);
-                     raiz.add(hijo2);
-                     raiz.add(hijo3);
-                     modeloarbol.reload();
-                  /* raiz.add(hijo1);
-                   add(hijo)
-                           
-                           model.setRoot(nuevaRaiz)*/
+                    boolean exist=false;
+                    for (int i = 0; i < hijo1.getChildCount(); i++) {
+                        if(hijo1.getChildAt(i)==especialidad ){
+                            exist=true;
+                            DefaultMutableTreeNode espec = (DefaultMutableTreeNode)hijo1.getChildAt(i);
+                            espec.add(hijito);
+                            hijo1.add(espec);
+                        }
+                    }
+                    if (exist==false) {
+                        especialidad.add(hijito);
+                        hijo1.add(especialidad);
+                    }
+                   
                 }
                 break;
             case 1:
-                 if ((user_global.getMazo2().getCartas().size())>3) {
+                 if ((user_global.getMazo2().getCartas().size())>2) {
                     JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
                 }else {
-                    user_global.getMazo2().setCarta(newcarta);
-                     DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
-                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
-                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
-                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
-                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
-                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
-                     hijo2.add(hijito);
-                     raiz.add(hijo1);
-                     raiz.add(hijo2);
-                     raiz.add(hijo3);
-                     modeloarbol.reload();
-                     
+                      user_global.getMazo1().setCarta(newcarta);
+                    boolean exist=false;
+                    for (int i = 0; i < hijo1.getChildCount(); i++) {
+                        if(hijo1.getChildAt(i)==especialidad ){
+                            exist=true;
+                            DefaultMutableTreeNode espec = (DefaultMutableTreeNode)hijo1.getChildAt(i);
+                            espec.add(hijito);
+                            hijo1.add(espec);
+                        }
+                    }
+                    if (exist==false) {
+                        especialidad.add(hijito);
+                        hijo1.add(especialidad);
+                    }
                 }
                   //user_global.getMazo2().setCarta(newcarta);
                 break;
             case 2:
-                 if ((user_global.getMazo3().getCartas().size())>3) {
+                 if ((user_global.getMazo3().getCartas().size())>2) {
                     JOptionPane.showMessageDialog(this, "Este mazo ya tiene suficientes cartas");
                 }else {
                     user_global.getMazo3().setCarta(newcarta);
-                    DefaultTreeModel modeloarbol = (DefaultTreeModel)jtree_mazos1.getModel();
-                     DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloarbol.getRoot();
-                     DefaultMutableTreeNode hijo1= (DefaultMutableTreeNode)raiz.getChildAt(0);
-                     DefaultMutableTreeNode hijo2= (DefaultMutableTreeNode)raiz.getChildAt(1);
-                     DefaultMutableTreeNode hijo3= (DefaultMutableTreeNode)raiz.getChildAt(2);
-                     DefaultMutableTreeNode hijito = new DefaultMutableTreeNode(newcarta);
-                     hijo3.add(hijito);
-                     raiz.add(hijo1);
-                     raiz.add(hijo2);
-                     raiz.add(hijo3);
-                     modeloarbol.reload();
+                     user_global.getMazo1().setCarta(newcarta);
+                    boolean exist=false;
+                    for (int i = 0; i < hijo1.getChildCount(); i++) {
+                        if(hijo1.getChildAt(i)==especialidad ){
+                            exist=true;
+                            DefaultMutableTreeNode espec = (DefaultMutableTreeNode)hijo1.getChildAt(i);
+                            espec.add(hijito);
+                            hijo1.add(espec);
+                        }
+                    }
+                    if (exist==false) {
+                        especialidad.add(hijito);
+                        hijo1.add(especialidad);
+                    }
+                   
                 }
                 break;
         }
+            raiz.add(hijo1);
+            raiz.add(hijo2);
+            raiz.add(hijo3);
+            modeloarbol.reload();
             
         } catch (Exception e) {
         }
     }                                            
+
+    private void ver_stasMouseClicked(java.awt.event.MouseEvent evt) {                                      
+       abrir_stats();
+       ta_stats.setText(cartaselec.toString());
+    }                                     
+
+    private void jtree_mazos1MouseClicked(java.awt.event.MouseEvent evt) {                                          
+          if (evt.isMetaDown()) {
+             int row = this.jtree_mazos1.getClosestRowForLocation(evt.getX(), evt.getY());//Buscamos la fila mas cercana cuando se hizo clic
+            this.jtree_mazos1.setSelectionRow(row);//Se selecciona esa fila
+
+            Object v1 = this.jtree_mazos1.getSelectionPath().getLastPathComponent(); //Buscamos el objeto de la última fila selecionada
+            DefaultMutableTreeNode nodoselecionado = (DefaultMutableTreeNode)v1;
+            
+              if (nodoselecionado.getUserObject() instanceof Cartas) {
+                  /*personaSeleccionada = (Persona) nodoSeleccionado.getUserObject();   //Extraemos el Onjeto persona y lo guardamos para trabajar con el luego
+                popMenu.show(evt.getComponent(), evt.getX(),evt.getY());            //Mostramos el menú donde hicimos clic*/
+                  opmoddano.setEnabled(true);
+                  opmodificarnombre.setEnabled(true);
+                  opmodificarvida.setEnabled(true);
+                  ver_stas.setEnabled(true);
+                  
+                 popupmenu_cartas.show(evt.getComponent(), evt.getX(),evt.getY()); 
+                  cartaselec= (Cartas) nodoselecionado.getUserObject();
+                  
+                  
+              }
+         }
+    }                                         
+
+    private void ver_stasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+      // Para ver las stats de la carta
+        ta_stats.setText("nombre=" + cartaselec.getNombre() 
+                + ", \ndano=" + cartaselec.getDano()
+                + ", \npuntosvida=" + cartaselec.getPuntosvida()
+                + ", \nobjetivo=" + cartaselec.getObjetivo()
+                + ", \nvelocidad=" + cartaselec.getVelocidad() 
+                + ", \ntipo=" + cartaselec.getTipo());
+        abrir_stats();
+      // ta_stats.setText(cartaselec.toString());
+    }                                        
+
+    private void opmodificarvidaActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        abrir_modvida();
+    }                                               
+
+    private void bt_editvidaMouseClicked(java.awt.event.MouseEvent evt) {                                         
+        try {
+             int vida = Integer.parseInt(tf_modvida.getText());
+       cartaselec.setPuntosvida(vida);
+       JOptionPane.showMessageDialog(this,"se modifico la vida");
+       tf_modvida.setText("");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"No se pudo modificar los puntos de vida intentelo de nuevo");
+        }
+       
+    }                                        
+
+    private void bt_editdanoMouseClicked(java.awt.event.MouseEvent evt) {                                         
+        try {
+             int dano = Integer.parseInt(tf_moddano.getText());
+       cartaselec.setDano(dano);
+       JOptionPane.showMessageDialog(this,"se modifico el dano");
+       tf_moddano.setText("");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"No se pudo modificar el dano intentelo de nuevo");
+        }
+    }                                        
+
+    private void opmoddanoActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        abrir_moddano();
+    }                                         
+
+    private void bt_editnombreMouseClicked(java.awt.event.MouseEvent evt) {                                           
+        try {
+             String nombre = tf_modnombre.getText();
+       cartaselec.setNombre(nombre);
+       JOptionPane.showMessageDialog(this,"se modifico el nombre");
+       tf_modnombre.setText("");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"No se pudo modificar el nombre intentelo de nuevo");
+        }
+    }                                          
+
+    private void opmodificarnombreActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        abrir_modnombre();
+    }                                                 
+
+    private void opmodificarvidaMouseClicked(java.awt.event.MouseEvent evt) {                                             
+       abrir_modvida();
+    }                                            
+
+    private void opmodificarnombreMouseClicked(java.awt.event.MouseEvent evt) {                                               
+        abrir_modnombre();
+    }                                              
+
+    private void opmoddanoMouseClicked(java.awt.event.MouseEvent evt) {                                       
+        abrir_modnombre();
+    }                                      
+
+    private void mn_logoutActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        modelo = (DefaultTreeModel)jtree_mazos1.getModel();
+        user_global.setModelo(modelo);
+        
+    }                                         
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    abrir_crearclan();
+    }                                     
+
+    private void bt_crearclanMouseClicked(java.awt.event.MouseEvent evt) {                                          
+        try{
+              String nombre = tf_clan.getText();
+              Clan clan  = new Clan();
+        switch (cb_tipoclan.getSelectedIndex()){
+            case 1:
+                clan = new Clan(nombre,user_global, "Bronze");
+                clanes.add(clan);
+                break;
+            case 2:
+                clan = new Clan(nombre,user_global, "Oro");
+                clanes.add(clan);
+                break;
+            case 3:
+                clan = new Clan(nombre,user_global, "Plata");
+                clanes.add(clan);
+                break;
+            case 4:
+                clan = new Clan(nombre,user_global, "Legendario");
+                clanes.add(clan);
+                break;
+        }
+        listamodelo.addElement(clan);
+        //listamodelo
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Hubo un problema vuelva a intentarlo");
+        }
+            
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -676,19 +1152,29 @@ public class Frame_principal extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton bt_agregarcarta;
     private javax.swing.JButton bt_color;
+    private javax.swing.JButton bt_crearclan;
     private javax.swing.JButton bt_crearyagregar1;
+    private javax.swing.JButton bt_editdano;
+    private javax.swing.JButton bt_editnombre;
+    private javax.swing.JButton bt_editvida;
     private javax.swing.JButton bt_login;
     private javax.swing.JComboBox<String> cb_carta;
     private javax.swing.JComboBox<String> cb_mazos;
+    private javax.swing.JComboBox<String> cb_tipoclan;
     private javax.swing.JDialog crearyagregar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
-    private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -700,20 +1186,39 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JDialog jd_crearclan;
     private javax.swing.JDialog jd_crearusuario;
     private com.toedter.calendar.JDateChooser jd_fecha;
     private javax.swing.JDialog jd_login;
+    private javax.swing.JDialog jd_moddano;
+    private javax.swing.JDialog jd_modnombre;
+    private javax.swing.JDialog jd_stats;
+    private javax.swing.JDialog jd_vida;
+    private javax.swing.JList<String> jl_listas;
     private javax.swing.JTree jtree_mazos1;
     private javax.swing.JMenuItem mn_login;
+    private javax.swing.JMenuItem mn_logout;
+    private javax.swing.JMenuItem opmoddano;
+    private javax.swing.JMenuItem opmodificarnombre;
+    private javax.swing.JMenuItem opmodificarvida;
+    private javax.swing.JPopupMenu popupmenu_cartas;
+    private javax.swing.JTextArea ta_stats;
+    private javax.swing.JTextField tf_clan;
     private javax.swing.JTextField tf_crearapellido;
     private javax.swing.JTextField tf_crearcontra;
     private javax.swing.JTextField tf_crearnombre;
     private javax.swing.JTextField tf_crearusuario;
     private javax.swing.JTextField tf_dano;
+    private javax.swing.JTextField tf_moddano;
+    private javax.swing.JTextField tf_modnombre;
+    private javax.swing.JTextField tf_modvida;
     private javax.swing.JPasswordField tf_pass;
     private javax.swing.JTextField tf_ptvida;
     private javax.swing.JTextField tf_usuario;
+    private javax.swing.JMenuItem ver_stas;
     // End of variables declaration                   
 ArrayList<Usuario> usuarios = new ArrayList();
 Usuario user_global;
@@ -721,6 +1226,11 @@ Mazo user_mazo1;
 Mazo user_mazo2;
 Mazo user_mazo3;
 Usuario yo= new Usuario();
+Cartas cartaselec;
+DefaultTreeModel modelo;
+ArrayList<Clan>clanes = new ArrayList();
+DefaultListModel listamodelo ;
+
 
 //acordate de borrar esto
 

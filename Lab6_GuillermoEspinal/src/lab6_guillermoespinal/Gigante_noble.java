@@ -92,7 +92,7 @@ public class Gigante_noble extends Cartas {
 
     @Override
     public String toString() {
-        return "Gigante_noble{" + '}';
+        return "Gigante_noble{" + super.nombre+'}';
     }
     
     

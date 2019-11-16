@@ -73,7 +73,7 @@ public class Minipekka  extends Cartas{
 
     @Override
     public String toString() {
-        return "Minipekka{" + '}';
+        return "Minipekka{" + super.nombre+'}';
     }
     
     

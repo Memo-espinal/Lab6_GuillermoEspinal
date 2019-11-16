@@ -4,6 +4,7 @@ package lab6_guillermoespinal;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.tree.DefaultTreeModel;
 
 
 public class Usuario {
@@ -19,6 +20,7 @@ public class Usuario {
    Mazo mazo2= new Mazo();
    Mazo mazo3= new Mazo();
    Clan clan ;
+    DefaultTreeModel modelo ;
 
     public Usuario() {
     }
@@ -127,6 +129,15 @@ public class Usuario {
     public void setClan(Clan clan) {
         this.clan = clan;
     }
+
+    public DefaultTreeModel getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(DefaultTreeModel modelo) {
+        this.modelo = modelo;
+    }
+    
     
 
     @Override

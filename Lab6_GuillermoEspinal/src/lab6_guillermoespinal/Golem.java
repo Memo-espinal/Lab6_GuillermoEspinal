@@ -93,7 +93,7 @@ public class Golem  extends Cartas{
 
     @Override
     public String toString() {
-        return "Golem{" + '}';
+        return "Golem{" + super.nombre+'}';
     }
     
     
